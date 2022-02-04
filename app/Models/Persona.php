@@ -15,6 +15,8 @@ class Persona extends Model
         "sexo",
         "recepcion_muestra_fecha",
         "qr",
+        "edad",
+        "origen",
         "created_at",
         "updated_at"
     ];

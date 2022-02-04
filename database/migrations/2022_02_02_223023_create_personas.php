@@ -20,6 +20,8 @@ class CreatePersonas extends Migration
             $table->string('sexo');
             $table->timestamp('recepcion_muestra_fecha');
             $table->string('qr');
+            $table->string('edad');
+            $table->string('origen');
             $table->timestamps();
         });
     }

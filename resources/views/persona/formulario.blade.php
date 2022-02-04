@@ -27,6 +27,17 @@
         <input type="text" name="sexo">
         <br>
 
+        <label for="edad">Edad</label>
+        <br>
+        <input type="text" name="edad">
+        <br>
+
+        <label for="origen">Origen (IQUIQUE, ALTO HOSPICIO, SANTIAGO)</label>
+
+        <br>
+        <input type="text" name="origen">
+        <br>
+
         <label for="sexo">Fecha de Ingreso ('un dia antes de la fecha de recepcion')</label>
         <br>
         <input type="datetime-local" name="recepcion_muestra_fecha">

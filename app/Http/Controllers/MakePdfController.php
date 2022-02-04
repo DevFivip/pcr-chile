@@ -30,6 +30,9 @@ class MakePdfController extends Controller
         $pdf->AddFont('Meiryo', '', $this->meiryoUiRegular);
         $pdf->AddFont('NotoBold', '', $this->notoSansBold);
 
+
+
+
         $pdf->SetFont('Meiryo', '', '8');
         $pdf->SetXY(20, 73);
         $pdf->Write(8, strtoupper($persona->nombres));
@@ -50,7 +53,16 @@ class MakePdfController extends Controller
 
         /**Edad */
         $pdf->SetXY(93, 80);
-        $pdf->Write(8, '26');
+        $pdf->Write(8, $persona->edad);
+
+        //Ciudad de origen
+        $pdf->SetFillColor(255, 255, 255);
+        $pdf->Rect(132, 41, 25, 5, 'F');
+
+        // Ciudad de origen
+        $pdf->SetFont('Meiryo', '', '8');
+        $pdf->SetXY(132, 40.5);
+        $pdf->Write(8, strtoupper($persona->origen));
 
 
         $NuevaFecha =  date('Y-m-d H:i:s', strtotime('+17 minute', strtotime($persona->recepcion_muestra_fecha)));
