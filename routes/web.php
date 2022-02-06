@@ -24,6 +24,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/Resultados/Index/{qr}', function ($qr) {
     $persona = Persona::where('qr', $qr)->first();
     if (!$persona) {

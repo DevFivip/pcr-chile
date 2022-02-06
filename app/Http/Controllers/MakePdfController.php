@@ -31,8 +31,6 @@ class MakePdfController extends Controller
         $pdf->AddFont('NotoBold', '', $this->notoSansBold);
 
 
-
-
         $pdf->SetFont('Meiryo', '', '8');
         $pdf->SetXY(20, 73);
         $pdf->Write(8, strtoupper($persona->nombres));
@@ -98,10 +96,9 @@ class MakePdfController extends Controller
         $link = env('APP_URL') . "/Resultados/Index/" . $persona->qr;
 
 
-        QRCode::text($link)->setSize(10)->setMargin(0)->setOutfile(__DIR__ . '/../../../storage/app/public/qr/' . $id . '.png')->png();
+        QRCode::text($link)->setSize(10)->setMargin(0)->setOutfile('../storage/app/public/qr/' . $id . '.png')->png();
 
-        $pdf->Image(__DIR__ . '/../../../storage/app/public/qr/' . $id . '.png', 18, 180, 63, 63);
-
+        $pdf->Image('../storage/app/public/qr/' . $id . '.png', 18, 180, 63, 63);
 
 
         return $pdf->Output('asdasd.pdf', 'I');
