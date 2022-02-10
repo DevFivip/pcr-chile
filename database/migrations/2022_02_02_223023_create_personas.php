@@ -22,6 +22,7 @@ class CreatePersonas extends Migration
             $table->string('qr');
             $table->string('edad');
             $table->string('origen');
+            $table->string('status');
             $table->timestamps();
         });
     }

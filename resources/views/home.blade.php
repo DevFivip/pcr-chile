@@ -15,15 +15,10 @@
                     @endif
                     <br>
                     <br>
-                    <br>
-                    <br>
 
                     <a href="/persona">
                         <h3>Agregar Nueva Persona</h3>
                     </a>
-                    <br>
-                    <br>
-                    <br>
                     <br>
 
                     {{ __('You are logged in!') }}

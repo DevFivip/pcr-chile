@@ -42,6 +42,8 @@ Route::get('/Resultados/Index/{qr}', function ($qr) {
 Route::get('/get/{id}', [MakePdfController::class, 'make'])->middleware('auth');
 
 Route::resource('persona', PersonaController::class);
+Route::post('persona/pagar/{id}', [PersonaController::class, 'pagar'])->middleware('auth');
+
 
 Route::prefix('ooooo')->group(function () {
     Auth::routes();

@@ -1,67 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Listado de Personas') }}</div>
 
-<body>
-    <h2>Listado Personas</h2>
-    <a href="/persona/create">CREAR NUEVO</a>
-    <table>
-        <thead>
-            <tr>
-                <td>ID</td>
-                <td>Nombre</td>
-                <td>Documento</td>
-                <td>Sexo</td>
-                <td>Fecha de Ingreso</td>
-            </tr>
-        </thead>
-        <tbody>
+                <div class="card-body">
+                    <a href="/persona/create">+ Registro</a>
 
-            @foreach ($personas as $persona)
-            <tr>
-                <td>{{$persona->id}}</td>
-                <td>{{$persona->nombres}}</td>
-                <td>{{$persona->documento}}</td>
-                <td>{{$persona->sexo}}</td>
-                <td>{{$persona->recepcion_muestra_fecha}}</td>
-                <td><a href="/get/{{$persona->id}}">Ver PDF</a> <a href="/Resultados/Index/{{$persona->qr}}">Ver Resultados</a></td>
-                <td><a href="#eliminar" onclick="eliminar({{$persona->id}})">🗑️ Eliminar</a></td>
-            </tr>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>Nombre</td>
+                                <td>Documento</td>
+                                <td>Sexo</td>
+                                <td>Fecha de Ingreso</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-            @endforeach
-            <tr>
+                            @foreach ($personas as $persona)
+                            <tr>
+                                <td>{{$persona->id}}</td>
+                                <td>{{$persona->nombres}}</td>
+                                <td>{{$persona->documento}}</td>
+                                <td>{{$persona->sexo}}</td>
+                                <td>{{$persona->recepcion_muestra_fecha}}</td>
 
-            </tr>
-        </tbody>
-    </table>
-    <script>
-        window.CSRF_TOKEN = '{{ csrf_token() }}';
+                                @if($persona->status =='0')
+                                <td><a href="#eliminar" onclick="status({{$persona->id}})">💲 Por Pagar</a></td>
+                                @else
+                                <td><a href="#eliminar" onclick="status({{$persona->id}})">💵 Pagado </a></td>
+                                @endif
+
+                                <td><a href="/get/{{$persona->id}}">📃</a> <a href="/Resultados/Index/{{$persona->qr}}">👁️</a> <a href="/persona/{{$persona->id}}/edit">✏️</a> <a href="#eliminar" onclick="eliminar({{$persona->id}})">🗑️</a></td>
+                            </tr>
+
+                            @endforeach
+                            <tr>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                    <script>
+                        window.CSRF_TOKEN = '{{ csrf_token() }}';
+
+                        async function status(id) {
+                            if (confirm("¿Seguro deseas cambiar el estado?") == true) {
+                                const res = await fetch('persona/pagar/' + id, {
+                                    method: 'POST',
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                        "Accept": "application/json",
+                                        "X-Requested-With": "XMLHttpRequest",
+                                        "X-CSRF-Token": window.CSRF_TOKEN
+                                    },
+                                })
+                                location.reload()
+                            }
+                        }
 
 
-        async function eliminar(id) {
-            if (confirm("¿Seguro deseas Eliminar?") == true) {
-                const res = await fetch('persona/' + id, {
-                    method: 'DELETE',
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json",
-                        "X-Requested-With": "XMLHttpRequest",
-                        "X-CSRF-Token": window.CSRF_TOKEN
-                    },
-                })
+                        async function eliminar(id) {
+                            if (confirm("¿Seguro deseas Eliminar?") == true) {
+                                const res = await fetch('persona/' + id, {
+                                    method: 'DELETE',
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                        "Accept": "application/json",
+                                        "X-Requested-With": "XMLHttpRequest",
+                                        "X-CSRF-Token": window.CSRF_TOKEN
+                                    },
+                                })
 
-                location.reload()
-            }
-        }
-    </script>
+                                location.reload()
+                            }
+                        }
+                    </script>
 
-
-</body>
-
-</html>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

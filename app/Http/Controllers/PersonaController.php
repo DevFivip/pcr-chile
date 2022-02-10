@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Persona;
+use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -90,6 +91,16 @@ class PersonaController extends Controller
      */
     public function edit($id)
     {
+        $persona = Persona::find($id);
+        $sexos = ['MASCULINO', "FEMENINO"];
+        $sitios = ['IQUIQUE', "SANTIAGO"];
+
+        $test = new DateTime($persona->recepcion_muestra_fecha);
+        $fecha = $test->format('Y-m-d');
+        $hora = $test->format('H:i');
+        $recepcion = $fecha . 'T' . $hora;
+
+        return view('persona.edit', compact('persona', 'sexos', 'sitios', 'recepcion'));
         //
     }
 
@@ -102,6 +113,10 @@ class PersonaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data = $request->all();
+        $persona = Persona::find($id);
+        $persona->update($data);
+        return redirect('persona');
         //
     }
 
@@ -118,5 +133,13 @@ class PersonaController extends Controller
 
         return response()->json(['status' => true, 'persona' => $persona], 200);
         //
+    }
+
+    public function pagar($id)
+    {
+        $persona = Persona::find($id);
+        $persona->status = ($persona->status === '0') ? '1' : '0';
+        $persona->update();
+        return $persona;
     }
 }

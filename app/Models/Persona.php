@@ -17,6 +17,7 @@ class Persona extends Model
         "qr",
         "edad",
         "origen",
+        "status",
         "created_at",
         "updated_at"
     ];
