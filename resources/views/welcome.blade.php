@@ -2486,7 +2486,7 @@
                             </div>
                             <div class="group" id="element3">
 
-                                <a href="https://wa.me/51916888423" class="button1" target="_blank" rel="noopener">
+                                <a href="https://wa.me/999999" class="button1" target="_blank" rel="noopener">
                                     <span class="button__text">
                                         Iquique
                                     </span>
@@ -2494,7 +2494,7 @@
                                         <ion-icon name="logo-whatsapp" role="img" class="md hydrated" aria-label="logo whatsapp"></ion-icon>
                                     </span>
                                 </a>
-                                <a href="https://wa.me/51916888423" class="button1" target="_blank" rel="noopener">
+                                <a href="https://wa.me/999999" class="button1" target="_blank" rel="noopener">
                                     <span class="button__text">
                                         Santiago
                                     </span>
@@ -3560,7 +3560,7 @@
                                     </div>
                                     <div class="elementor-element elementor-element-2949e172 elementor-widget elementor-widget-heading" data-id="2949e172" data-element_type="widget" data-widget_type="heading.default">
                                         <div class="elementor-widget-container">
-                                            <div class="elementor-heading-title elementor-size-default"><span>Contáctese con nosotros por whatsapp:</span><br><span> <a href="https://wa.me/51916888423" target="_blank">+56 9 8283 8914</a> (Iquique) - <a href="https://wa.me/51916888423" target="_blank">+56 9 8658 6135</a> (Santiago)</span><br><span> </span><span>de: Lunes a viernes desde las 08:30 a 14:00 horas y de<br>15:00 a 17:30 horas.<br>Sábados desde las 08:30 a 13:30 horas.</span>
+                                            <div class="elementor-heading-title elementor-size-default"><span>Contáctese con nosotros por whatsapp:</span><br><span> <a href="https://wa.me/999999" target="_blank">+56 9 8283 8914</a> (Iquique) - <a href="https://wa.me/999999" target="_blank">+56 9 8658 6135</a> (Santiago)</span><br><span> </span><span>de: Lunes a viernes desde las 08:30 a 14:00 horas y de<br>15:00 a 17:30 horas.<br>Sábados desde las 08:30 a 13:30 horas.</span>
                                                 <br style="font-variant-numeric: normal; font-variant-east-asian: normal; line-height: normal; text-align: -webkit-auto; white-space: normal; text-size-adjust: auto;">
                                                 También puede dejarnos un mensaje y le responderemos a la brevedad.
                                             </div>

@@ -18,7 +18,7 @@ class CreatePersonas extends Migration
             $table->string('nombres');
             $table->string('documento');
             $table->string('sexo');
-            $table->timestamp('recepcion_muestra_fecha');
+            $table->dateTime('recepcion_muestra_fecha');
             $table->string('qr');
             $table->string('edad');
             $table->string('origen');
