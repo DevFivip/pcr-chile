@@ -95,12 +95,10 @@ class MakePdfController extends Controller
 
         $link = env('APP_URL') . "/Resultados/Index/" . $persona->qr;
 
-
         QRCode::text($link)->setSize(10)->setMargin(0)->setOutfile('../storage/app/public/qr/' . $id . '.png')->png();
 
         $pdf->Image('../storage/app/public/qr/' . $id . '.png', 18, 180, 63, 63);
 
-
-        return $pdf->Output('asdasd.pdf', 'I');
+        return $pdf->Output($persona->nombres.'.pdf', 'I');
     }
 }

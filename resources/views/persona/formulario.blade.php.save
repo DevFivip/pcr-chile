@@ -35,13 +35,12 @@
         <input type="text" name="edad">
         <br>
 
-	<label for="origen">Origen</label>
+        <label for="origen">Origen (IQUIQUE, ALTO HOSPICIO, SANTIAGO)</label>
+
         <br>
-        <select name="origen">
-                <option value="IQUIQUE">IQUIQUE</option>
-                <option value="SANTIAGO">SANTIAGO</option>
-        </select>
+        <input type="text" name="origen">
         <br>
+
 
 
 

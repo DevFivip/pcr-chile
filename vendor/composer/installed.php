@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'e334ce0c98e032273aa12d0fbd92dd67f3b4d96f',
+        'reference' => 'ab1a1723a001b658ae39de8895668d4a5b4955a2',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -409,7 +409,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'e334ce0c98e032273aa12d0fbd92dd67f3b4d96f',
+            'reference' => 'ab1a1723a001b658ae39de8895668d4a5b4955a2',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -525,9 +525,6 @@
             'aliases' => array(),
             'reference' => '776f831124e9c62e1a2c601ecc52e776d8bb7220',
             'dev_requirement' => true,
-            'replaced' => array(
-                0 => '1.10.2',
-            ),
         ),
         'nesbot/carbon' => array(
             'pretty_version' => '2.56.0',
@@ -787,8 +784,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0.0 || 2.0.0 || 3.0.0',
-                1 => '1.0|2.0',
+                0 => '1.0|2.0',
+                1 => '1.0.0 || 2.0.0 || 3.0.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -993,12 +990,12 @@
             'dev_requirement' => true,
         ),
         'setasign/fpdf' => array(
-            'pretty_version' => '1.8.4',
-            'version' => '1.8.4.0',
+            'pretty_version' => '1.8.2',
+            'version' => '1.8.2.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../setasign/fpdf',
             'aliases' => array(),
-            'reference' => 'b0ddd9c5b98ced8230ef38534f6f3c17308a7974',
+            'reference' => 'd77904018090c17dc9f3ab6e944679a7a47e710a',
             'dev_requirement' => false,
         ),
         'setasign/fpdi' => array(
