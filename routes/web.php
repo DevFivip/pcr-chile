@@ -24,6 +24,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('qr', function () 
+{
+  return QRCode::text('QR Code Generator for Laravel!')->png();    
+});
+
+
+
+
 Route::get('/Resultados/Index/{qr}', function ($qr) {
     $persona = Persona::where('qr', $qr)->first();
     if (!$persona) {
