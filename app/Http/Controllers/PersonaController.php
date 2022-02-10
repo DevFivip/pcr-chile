@@ -28,7 +28,7 @@ class PersonaController extends Controller
      */
     public function index()
     {
-        $personas = Persona::all();
+        $personas = Persona::orderBy('id','DESC')->get();
         return view('persona.index', ["personas" => $personas]);
         //
     }
