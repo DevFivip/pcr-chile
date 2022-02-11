@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <a href="/persona/create">+ Registro</a>
 
-                    <table class="table table-striped">
+                    <table class="table table-striped table-hover">
                         <thead>
                             <tr>
                                 <td>ID</td>
@@ -61,6 +61,7 @@
                                         "X-CSRF-Token": window.CSRF_TOKEN
                                     },
                                 })
+
                                 location.reload()
                             }
                         }
