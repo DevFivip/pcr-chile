@@ -33,7 +33,7 @@ class MakePdfController extends Controller
 
         $pdf->SetFont('Meiryo', '', '8');
         $pdf->SetXY(20, 73);
-        $pdf->Write(8, strtoupper($persona->nombres));
+        $pdf->Write(8, utf8_decode(strtoupper($persona->nombres)));
 
         $pdf->SetXY(20, 80);
         $pdf->Write(8, $persona->documento);
@@ -60,7 +60,7 @@ class MakePdfController extends Controller
         // Ciudad de origen
         $pdf->SetFont('Meiryo', '', '8');
         $pdf->SetXY(132, 40.5);
-        $pdf->Write(8, strtoupper($persona->origen));
+        $pdf->Write(8, utf8_decode(strtoupper($persona->origen)));
 
 
         $NuevaFecha =  date('Y-m-d H:i:s', strtotime('+17 minute', strtotime($persona->recepcion_muestra_fecha)));
@@ -99,6 +99,6 @@ class MakePdfController extends Controller
 
         $pdf->Image('../storage/app/public/qr/' . $id . '.png', 18, 180, 63, 63);
 
-        return $pdf->Output($persona->nombres.'.pdf', 'I');
+        return $pdf->Output(utf8_decode($persona->nombres).'.pdf', 'I');
     }
 }
