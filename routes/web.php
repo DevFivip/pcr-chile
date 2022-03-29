@@ -46,7 +46,11 @@ Route::post('persona/pagar/{id}', [PersonaController::class, 'pagar'])->middlewa
 
 
 Route::prefix('ooooo')->group(function () {
-    Auth::routes();
+    Auth::routes([
+        'register' => false, // Registration Routes...
+        'reset' => false, // Password Reset Routes...
+        'verify' => false, // Email Verification Routes...
+    ]);
 });
 
 
