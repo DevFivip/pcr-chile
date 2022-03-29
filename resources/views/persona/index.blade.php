@@ -33,9 +33,9 @@
                                 <td>{{$persona->recepcion_muestra_fecha}}</td>
 
                                 @if($persona->status =='0')
-                                <td><a href="#eliminar" onclick="status({{$persona->id}})">💲 Por Pagar</a></td>
+                                <td><a href="#pagar" onclick="status({{$persona->id}})">💲 Por Pagar</a></td>
                                 @else
-                                <td><a href="#eliminar" onclick="status({{$persona->id}})">💵 Pagado </a></td>
+                                <td><a href="#pagar" onclick="status({{$persona->id}})">💵 Pagado </a></td>
                                 @endif
 
                                 <td><a href="/get/{{$persona->id}}">📃</a> <a href="/Resultados/Index/{{$persona->qr}}">👁️</a> <a href="/persona/{{$persona->id}}/edit">✏️</a> <a href="#eliminar" onclick="eliminar({{$persona->id}})">🗑️</a></td>
