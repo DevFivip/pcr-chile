@@ -225,10 +225,9 @@
                                         <label id="numorden">Presentación</label>
                                         <input readonly class="k-textbox" id="iDatencion" name="iDatencion" value="PCR SARS-CoV-2" placeholder="Escribe el número de atención" style="width:100%">
                                     </div>
-
                                     <div class="col-lg-12">
                                         <label id="numorden">Resultado</label>
-                                        <input readonly class="k-textbox" id="iDatencion" name="iDatencion" value="Negativo" placeholder="Escribe el número de atención" style="width:100%">
+                                        <input readonly class="k-textbox" id="iDatencion" name="iDatencion" value="{{$persona->id === 117 ? 'Positivo':'Negativo'}}" placeholder="Escribe el número de atención" style="width:100%">
                                     </div>
 
 
